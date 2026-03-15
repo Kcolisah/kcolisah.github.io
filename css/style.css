@@ -314,6 +314,11 @@ a {
     transform: translateY(-16px);
   }
 
+  .page-shell {
+  width: min(100% - 28px, 1280px);
+  margin: 20px auto 0 auto;
+}
+
   @media (max-width: 700px) {
   .overview-grid {
     grid-template-columns: 1fr;
