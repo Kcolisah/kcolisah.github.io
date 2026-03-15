@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salary Breakdown Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #050505;
+      color: #f3f1ee;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      padding: 36px;
+    }
+
+    .salary-demo {
+      width: min(100%, 980px);
+      margin: 0 auto;
+    }
+
+    .demo-top {
+      margin-bottom: 42px;
+    }
+
+    .demo-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #a8a097;
+      margin-bottom: 18px;
+    }
+
+    .demo-top h1 {
+      font-size: clamp(34px, 5vw, 54px);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .demo-top p {
+      max-width: 620px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #d2d2d2;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .demo-panel {
+      background: #0b0b0b;
+      border: 1px solid #1d1d1d;
+      padding: 28px;
+    }
+
+    .demo-panel h2 {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #f3f1ee;
+      margin-bottom: 24px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #a8a097;
+      margin-bottom: 10px;
+    }
+
+    .input-group input {
+      width: 100%;
+      border: 1px solid #2b2b2b;
+      background: #111111;
+      color: #f3f1ee;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.25s ease;
+    }
+
+    .input-group input:focus {
+      border-color: #8f877a;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    button {
+      border: 1px solid #3a3a3a;
+      background: transparent;
+      color: #f3f1ee;
+      padding: 12px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    button.primary {
+      background: #8f877a;
+      border-color: #8f877a;
+    }
+
+    button.primary:hover {
+      background: #a1988b;
+      border-color: #a1988b;
+    }
+
+    button.secondary:hover {
+      border-color: #8f877a;
+      color: #8f877a;
+    }
+
+    .results-panel {
+      background: #070707;
+      border: 1px solid #1d1d1d;
+      padding: 28px;
+      min-height: 100%;
+    }
+
+    .results-header {
+      margin-bottom: 26px;
+    }
+
+    .results-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #a8a097;
+      margin-bottom: 10px;
+    }
+
+    .results-header h2 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #f3f1ee;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .result-card {
+      border: 1px solid #1f1f1f;
+      background: #0d0d0d;
+      padding: 20px;
+      min-height: 132px;
+    }
+
+    .result-card span {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #a8a097;
+      margin-bottom: 18px;
+    }
+
+    .result-card strong {
+      display: block;
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 600;
+      color: #f3f1ee;
+      line-height: 1.2;
+    }
+
+    .result-card small {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #bfbfbf;
+    }
+
+    .note-box {
+      margin-top: 20px;
+      border-top: 1px solid #1f1f1f;
+      padding-top: 18px;
+    }
+
+    .note-box p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: #bfbfbf;
+    }
+
+    @media (max-width: 900px) {
+      body {
+        padding: 20px;
+      }
+
+      .demo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="salary-demo">
+    <section class="demo-top">
+      <p class="demo-label">INTERACTIVE DEMO</p>
+      <h1>Salary Breakdown Calculator</h1>
+      <p>
+        Estimate gross monthly income, yearly tax amount, annual take-home pay,
+        and monthly take-home pay using a yearly salary and tax rate.
+      </p>
+    </section>
+
+    <section class="demo-grid">
+      <div class="demo-panel">
+        <h2>ENTER VALUES</h2>
+
+        <div class="input-group">
+          <label for="salary">ANNUAL SALARY</label>
+          <input type="number" id="salary" placeholder="55000" min="0" step="0.01" />
+        </div>
+
+        <div class="input-group">
+          <label for="taxRate">TAX RATE (%)</label>
+          <input type="number" id="taxRate" placeholder="22" min="0" step="0.01" />
+        </div>
+
+        <div class="button-row">
+          <button class="primary" id="calculateBtn" type="button">CALCULATE</button>
+          <button class="secondary" id="resetBtn" type="button">RESET</button>
+        </div>
+      </div>
+
+      <div class="results-panel">
+        <div class="results-header">
+          <p class="results-label">OUTPUT</p>
+          <h2>Salary Summary</h2>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <span>MONTHLY GROSS PAY</span>
+            <strong id="monthlyGross">$0.00</strong>
+            <small>Annual salary divided by 12 months.</small>
+          </div>
+
+          <div class="result-card">
+            <span>YEARLY TAX AMOUNT</span>
+            <strong id="yearlyTax">$0.00</strong>
+            <small>Estimated taxes based on the input percentage.</small>
+          </div>
+
+          <div class="result-card">
+            <span>YEARLY TAKE-HOME PAY</span>
+            <strong id="yearlyTakeHome">$0.00</strong>
+            <small>Annual salary after estimated tax deductions.</small>
+          </div>
+
+          <div class="result-card">
+            <span>MONTHLY TAKE-HOME PAY</span>
+            <strong id="monthlyTakeHome">$0.00</strong>
+            <small>Estimated monthly income after taxes.</small>
+          </div>
+        </div>
+
+        <div class="note-box">
+          <p id="statusText">
+            Enter a salary and tax rate, then calculate to view the full breakdown.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const salaryInput = document.getElementById("salary");
+    const taxRateInput = document.getElementById("taxRate");
+    const calculateBtn = document.getElementById("calculateBtn");
+    const resetBtn = document.getElementById("resetBtn");
+
+    const monthlyGrossOutput = document.getElementById("monthlyGross");
+    const yearlyTaxOutput = document.getElementById("yearlyTax");
+    const yearlyTakeHomeOutput = document.getElementById("yearlyTakeHome");
+    const monthlyTakeHomeOutput = document.getElementById("monthlyTakeHome");
+    const statusText = document.getElementById("statusText");
+
+    function formatCurrency(value) {
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD"
+      }).format(value);
+    }
+
+    function resetOutputs() {
+      monthlyGrossOutput.textContent = "$0.00";
+      yearlyTaxOutput.textContent = "$0.00";
+      yearlyTakeHomeOutput.textContent = "$0.00";
+      monthlyTakeHomeOutput.textContent = "$0.00";
+      statusText.textContent =
+        "Enter a salary and tax rate, then calculate to view the full breakdown.";
+    }
+
+    function calculateSalaryBreakdown() {
+      const salary = Number(salaryInput.value);
+      const taxRate = Number(taxRateInput.value);
+
+      if (!salaryInput.value || !taxRateInput.value) {
+        statusText.textContent = "Please enter both annual salary and tax rate.";
+        return;
+      }
+
+      if (salary < 0 || taxRate < 0) {
+        statusText.textContent = "Values cannot be negative.";
+        return;
+      }
+
+      const yearlyTaxAmount = salary * (taxRate / 100);
+      const yearlyTakeHome = salary - yearlyTaxAmount;
+      const monthlyGross = salary / 12;
+      const monthlyTakeHome = yearlyTakeHome / 12;
+
+      monthlyGrossOutput.textContent = formatCurrency(monthlyGross);
+      yearlyTaxOutput.textContent = formatCurrency(yearlyTaxAmount);
+      yearlyTakeHomeOutput.textContent = formatCurrency(yearlyTakeHome);
+      monthlyTakeHomeOutput.textContent = formatCurrency(monthlyTakeHome);
+
+      statusText.textContent =
+        "Calculation complete. This estimate is based on a simple tax-rate deduction model.";
+    }
+
+    calculateBtn.addEventListener("click", calculateSalaryBreakdown);
+
+    resetBtn.addEventListener("click", () => {
+      salaryInput.value = "";
+      taxRateInput.value = "";
+      resetOutputs();
+    });
+
+    [salaryInput, taxRateInput].forEach((input) => {
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          calculateSalaryBreakdown();
+        }
+      });
+    });
+
+    resetOutputs();
+  </script>
+</body>
+</html>

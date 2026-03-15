@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Kenneth Olisah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="projects-page">
+  <div class="page-shell">
+    <header class="site-header">
+      <a href="index.html" class="logo">K.O</a>
+
+      <nav class="nav">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </header>
+
+    <main class="projects-main">
+      <section class="projects-hero reveal">
+        <div class="projects-hero-left">
+          <p class="projects-kicker">SELECTED WORK</p>
+          <h1>PROJECTS</h1>
+        </div>
+
+        <div class="projects-hero-right">
+          <p>
+            A growing collection of interactive builds, backend-oriented tools,
+            and programming projects focused on logic, structure, and practical
+            software development.
+          </p>
+        </div>
+      </section>
+
+      <section class="projects-showcase reveal">
+        <article class="featured-project">
+          <div class="featured-meta">
+            <span>01</span>
+            <span>INTERACTIVE</span>
+            <span>FINANCIAL LOGIC</span>
+          </div>
+
+          <div class="featured-content">
+            <h2>Mortgage Calculator</h2>
+            <p>
+              A live mortgage calculator built for the browser that computes
+              monthly payments using loan principal, annual interest rate, and
+              repayment term.
+            </p>
+
+            <ul>
+              <li>Real-time user input</li>
+              <li>Amortization-based monthly payment logic</li>
+              <li>Portfolio-ready interactive demo</li>
+            </ul>
+
+            <div class="project-actions">
+              <button
+                class="project-btn primary demo-trigger"
+                type="button"
+                data-demo="mortgage"
+              >
+                TRY DEMO
+              </button>
+
+              <a class="project-btn secondary" href="#" target="_blank">GITHUB</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="featured-project">
+          <div class="featured-meta">
+            <span>02</span>
+            <span>INTERACTIVE</span>
+            <span>FINANCIAL TOOL</span>
+          </div>
+
+          <div class="featured-content">
+            <h2>Salary Breakdown Calculator</h2>
+            <p>
+              A browser-based salary calculator that estimates monthly pay,
+              yearly tax deductions, and annual take-home income from user
+              salary and tax inputs.
+            </p>
+
+            <ul>
+              <li>Interactive salary and tax input handling</li>
+              <li>Instant yearly and monthly breakdown output</li>
+              <li>Practical real-world financial utility</li>
+            </ul>
+
+            <button
+              class="project-btn primary demo-trigger"
+              type="button"
+              data-demo="salary"
+            >
+              TRY DEMO
+            </button>
+              <a class="project-btn secondary" href="#" target="_blank">GITHUB</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="projects-viewer reveal" id="projectViewer">
+        <div class="viewer-top">
+          <div class="viewer-label-wrap">
+            <p class="viewer-label">LIVE PREVIEW</p>
+            <h3 id="viewerTitle">Mortgage Calculator</h3>
+          </div>
+
+          <button class="viewer-close" id="viewerClose" type="button">
+            CLOSE
+          </button>
+        </div>
+
+        <div class="viewer-frame-wrap">
+          <iframe
+            id="viewerFrame"
+            src=""
+            title="Project demo preview"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="projects-archive reveal">
+        <div class="archive-divider"></div>
+
+        <div class="archive-header">
+          <h2>PROJECT LIST</h2>
+          <p>
+            Additional and upcoming projects focused on backend engineering,
+            Java fundamentals, data structures, and application development.
+          </p>
+        </div>
+
+        <div class="archive-grid">
+          <article class="archive-item">
+            <div class="archive-item-top">
+              <span>JAVA</span>
+              <span>IN PROGRESS</span>
+            </div>
+            <h3>Task / Issue Tracker</h3>
+            <p>
+              Console-based CRUD tracker for creating, viewing, updating, and
+              deleting tickets with status management across OPEN,
+              IN_PROGRESS, and DONE states.
+            </p>
+            <a href="#" target="_blank">GitHub</a>
+          </article>
+
+          <article class="archive-item">
+            <div class="archive-item-top">
+              <span>JAVA</span>
+              <span>COMPLETED</span>
+            </div>
+            <h3>Salary Breakdown Calculator</h3>
+            <p>
+              A command-line Java utility that calculates monthly salary,
+              yearly taxes, and take-home pay from user-provided salary and
+              tax rate values.
+            </p>
+            <a href="#" target="_blank">GitHub</a>
+          </article>
+
+          <article class="archive-item">
+            <div class="archive-item-top">
+              <span>SQL</span>
+              <span>PLANNED</span>
+            </div>
+            <h3>Data Analysis Project</h3>
+            <p>
+              SQL-driven analysis project focused on querying structured data,
+              extracting insights, and presenting meaningful results.
+            </p>
+            <a href="#" target="_blank">GitHub</a>
+          </article>
+
+          <article class="archive-item">
+            <div class="archive-item-top">
+              <span>SPRING BOOT</span>
+              <span>FUTURE</span>
+            </div>
+            <h3>Backend Task API</h3>
+            <p>
+              REST-style backend application for managing tasks, exposing CRUD
+              operations, and practicing production-style backend structure.
+            </p>
+            <a href="#" target="_blank">GitHub</a>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-top">
+      <span>KENNETH OLISAH</span>
+      <span>XERONKC PRODUCTION</span>
+      <span>OMAHA, NEBRASKA</span>
+    </div>
+
+  <div class="footer-links reveal">
+    <a href="mailto:kcolisah084@gmail.com">EMAIL</a>
+    <a href="https://github.com/Kcolisah" target="_blank">GITHUB</a>
+    <a href="https://www.linkedin.com/in/kenneth-olisah-990343289/" target="_blank">LINKEDIN</a>
+  </div>
+
+    <div class="footer-center">MADE BY</div>
+
+    <div class="footer-brand reveal">
+      <span class="brand-left">K</span>
+      <span class="brand-dot">.</span>
+      <span class="brand-right">O</span>
+    </div>
+  </footer>
+
+  <script src="javascript/script.js"></script>
+</body>
+</html>

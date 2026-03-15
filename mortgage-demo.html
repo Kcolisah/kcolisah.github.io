@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mortgage Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #050505;
+      color: #f3f1ee;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      padding: 36px;
+    }
+
+    .mortgage-demo {
+      width: min(100%, 980px);
+      margin: 0 auto;
+    }
+
+    .demo-top {
+      margin-bottom: 42px;
+    }
+
+    .demo-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #a8a097;
+      margin-bottom: 18px;
+    }
+
+    .demo-top h1 {
+      font-size: clamp(34px, 5vw, 54px);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .demo-top p {
+      max-width: 620px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #d2d2d2;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .demo-panel {
+      background: #0b0b0b;
+      border: 1px solid #1d1d1d;
+      padding: 28px;
+    }
+
+    .demo-panel h2 {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #f3f1ee;
+      margin-bottom: 24px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #a8a097;
+      margin-bottom: 10px;
+    }
+
+    .input-group input {
+      width: 100%;
+      border: 1px solid #2b2b2b;
+      background: #111111;
+      color: #f3f1ee;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.25s ease;
+    }
+
+    .input-group input:focus {
+      border-color: #8f877a;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    button {
+      border: 1px solid #3a3a3a;
+      background: transparent;
+      color: #f3f1ee;
+      padding: 12px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    button.primary {
+      background: #8f877a;
+      border-color: #8f877a;
+    }
+
+    button.primary:hover {
+      background: #a1988b;
+      border-color: #a1988b;
+    }
+
+    button.secondary:hover {
+      border-color: #8f877a;
+      color: #8f877a;
+    }
+
+    .results-panel {
+      background: #070707;
+      border: 1px solid #1d1d1d;
+      padding: 28px;
+      min-height: 100%;
+    }
+
+    .results-header {
+      margin-bottom: 26px;
+    }
+
+    .results-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #a8a097;
+      margin-bottom: 10px;
+    }
+
+    .results-header h2 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #f3f1ee;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .result-card {
+      border: 1px solid #1f1f1f;
+      background: #0d0d0d;
+      padding: 20px;
+      min-height: 132px;
+    }
+
+    .result-card span {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #a8a097;
+      margin-bottom: 18px;
+    }
+
+    .result-card strong {
+      display: block;
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 600;
+      color: #f3f1ee;
+      line-height: 1.2;
+    }
+
+    .result-card small {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #bfbfbf;
+    }
+
+    .note-box {
+      margin-top: 20px;
+      border-top: 1px solid #1f1f1f;
+      padding-top: 18px;
+    }
+
+    .note-box p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: #bfbfbf;
+    }
+
+    @media (max-width: 900px) {
+      body {
+        padding: 20px;
+      }
+
+      .demo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="mortgage-demo">
+    <section class="demo-top">
+      <p class="demo-label">INTERACTIVE DEMO</p>
+      <h1>Mortgage Calculator</h1>
+      <p>
+        Calculate estimated monthly mortgage payments using principal, annual
+        interest rate, and loan term in years.
+      </p>
+    </section>
+
+    <section class="demo-grid">
+      <div class="demo-panel">
+        <h2>ENTER VALUES</h2>
+
+        <div class="input-group">
+          <label for="principal">LOAN PRINCIPAL</label>
+          <input type="number" id="principal" placeholder="250000" min="0" step="0.01" />
+        </div>
+
+        <div class="input-group">
+          <label for="interest">ANNUAL INTEREST RATE (%)</label>
+          <input type="number" id="interest" placeholder="6.5" min="0" step="0.01" />
+        </div>
+
+        <div class="input-group">
+          <label for="years">LOAN TERM (YEARS)</label>
+          <input type="number" id="years" placeholder="30" min="1" step="1" />
+        </div>
+
+        <div class="button-row">
+          <button class="primary" id="calculateBtn" type="button">CALCULATE</button>
+          <button class="secondary" id="resetBtn" type="button">RESET</button>
+        </div>
+      </div>
+
+      <div class="results-panel">
+        <div class="results-header">
+          <p class="results-label">OUTPUT</p>
+          <h2>Mortgage Summary</h2>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <span>MONTHLY PAYMENT</span>
+            <strong id="monthlyPayment">$0.00</strong>
+            <small>Estimated monthly mortgage payment using the amortization formula.</small>
+          </div>
+
+          <div class="result-card">
+            <span>TOTAL PAYMENTS</span>
+            <strong id="totalPayments">0</strong>
+            <small>Total number of monthly payments over the full term.</small>
+          </div>
+
+          <div class="result-card">
+            <span>TOTAL AMOUNT PAID</span>
+            <strong id="totalPaid">$0.00</strong>
+            <small>Total paid across the full loan period.</small>
+          </div>
+
+          <div class="result-card">
+            <span>TOTAL INTEREST PAID</span>
+            <strong id="totalInterest">$0.00</strong>
+            <small>Total estimated interest paid over the life of the loan.</small>
+          </div>
+        </div>
+
+        <div class="note-box">
+          <p id="statusText">
+            Enter loan details, then calculate to view the mortgage estimate.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const principalInput = document.getElementById("principal");
+    const interestInput = document.getElementById("interest");
+    const yearsInput = document.getElementById("years");
+    const calculateBtn = document.getElementById("calculateBtn");
+    const resetBtn = document.getElementById("resetBtn");
+
+    const monthlyPaymentOutput = document.getElementById("monthlyPayment");
+    const totalPaymentsOutput = document.getElementById("totalPayments");
+    const totalPaidOutput = document.getElementById("totalPaid");
+    const totalInterestOutput = document.getElementById("totalInterest");
+    const statusText = document.getElementById("statusText");
+
+    function formatCurrency(value) {
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD"
+      }).format(value);
+    }
+
+    function resetOutputs() {
+      monthlyPaymentOutput.textContent = "$0.00";
+      totalPaymentsOutput.textContent = "0";
+      totalPaidOutput.textContent = "$0.00";
+      totalInterestOutput.textContent = "$0.00";
+      statusText.textContent =
+        "Enter loan details, then calculate to view the mortgage estimate.";
+    }
+
+    function calculateMortgage() {
+      const principal = Number(principalInput.value);
+      const annualInterestRate = Number(interestInput.value);
+      const years = Number(yearsInput.value);
+
+      if (!principalInput.value || !interestInput.value || !yearsInput.value) {
+        statusText.textContent = "Please enter principal, interest rate, and loan term.";
+        return;
+      }
+
+      if (principal <= 0 || annualInterestRate < 0 || years <= 0) {
+        statusText.textContent = "Please enter valid positive values.";
+        return;
+      }
+
+      const monthlyInterestRate = annualInterestRate / 100 / 12;
+      const numberOfPayments = years * 12;
+
+      let monthlyPayment;
+
+      if (monthlyInterestRate === 0) {
+        monthlyPayment = principal / numberOfPayments;
+      } else {
+        monthlyPayment =
+          principal *
+          (
+            (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)) /
+            (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1)
+          );
+      }
+
+      const totalPaid = monthlyPayment * numberOfPayments;
+      const totalInterest = totalPaid - principal;
+
+      monthlyPaymentOutput.textContent = formatCurrency(monthlyPayment);
+      totalPaymentsOutput.textContent = numberOfPayments.toString();
+      totalPaidOutput.textContent = formatCurrency(totalPaid);
+      totalInterestOutput.textContent = formatCurrency(totalInterest);
+
+      statusText.textContent =
+        "Calculation complete. This estimate uses a standard fixed-rate mortgage formula.";
+    }
+
+    calculateBtn.addEventListener("click", calculateMortgage);
+
+    resetBtn.addEventListener("click", () => {
+      principalInput.value = "";
+      interestInput.value = "";
+      yearsInput.value = "";
+      resetOutputs();
+    });
+
+    [principalInput, interestInput, yearsInput].forEach((input) => {
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          calculateMortgage();
+        }
+      });
+    });
+
+    resetOutputs();
+  </script>
+</body>
+</html>
