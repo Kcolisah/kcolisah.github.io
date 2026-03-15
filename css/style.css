@@ -105,6 +105,8 @@ a {
   grid-template-columns: repeat(3, 1fr);
   gap: 48px;
   min-height: 480px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
 
 .overview-card {
