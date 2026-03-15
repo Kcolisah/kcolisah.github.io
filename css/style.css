@@ -286,14 +286,14 @@ a {
   }
 
   .site-footer {
-    margin: 8px 32px 0 32px;
+    margin-top: 8px;
     background: #7d7a6e;
     color: #f3f1ee;
-    min-height: 720px;
-    padding: 28px 32px 0 32px;
+    min-height: 760px;
+    padding: 18px 26px 26px 26px;
     position: relative;
     overflow: hidden;
-}
+  }
   }
 
   .footer-links {

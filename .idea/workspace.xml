@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88aa8c10-eec3-4b98-be6f-a33136ae1915" name="Changes" comment="HTML and CSS code for portfolio-site">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="88aa8c10-eec3-4b98-be6f-a33136ae1915" name="Changes" comment="Refine footer brand positioning and scale">
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773552002734</updated>
-      <workItem from="1773552003761" duration="1099000" />
+      <workItem from="1773552003761" duration="1480000" />
     </task>
     <task id="LOCAL-00001" summary="HTML and CSS code for portfolio-site">
       <option name="closed" value="true" />
@@ -86,7 +85,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773553254558</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add centered page shell to match Figma layout width">
+      <option name="closed" value="true" />
+      <created>1773553528453</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773553528453</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refine footer brand positioning and scale">
+      <option name="closed" value="true" />
+      <created>1773553658292</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773553658292</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +109,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="HTML and CSS code for portfolio-site" />
-    <option name="LAST_COMMIT_MESSAGE" value="HTML and CSS code for portfolio-site" />
+    <MESSAGE value="Add centered page shell to match Figma layout width" />
+    <MESSAGE value="Refine footer brand positioning and scale" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refine footer brand positioning and scale" />
   </component>
 </project>
