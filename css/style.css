@@ -185,9 +185,9 @@ a {
 
 .footer-brand {
   position: absolute;
-  left: 40px;
-  right: 40px;
-  bottom: -40px;
+  left: 28px;
+  right: 28px;
+  bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -197,7 +197,7 @@ a {
 
 .brand-left,
 .brand-right {
-  font-size: clamp(280px, 28vw, 520px);
+  font-size: clamp(220px, 20vw, 360px);
   font-weight: 700;
 }
 
