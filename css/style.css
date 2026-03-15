@@ -145,7 +145,7 @@ a {
 .footer-top {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -159,7 +159,7 @@ a {
 }
 
 .footer-links {
-  margin-top: 140px;
+  margin-top: 82px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   font-size: 13px;
@@ -197,14 +197,14 @@ a {
 
 .brand-left,
 .brand-right {
-  font-size: clamp(220px, 20vw, 360px);
+  font-size: clamp(280px, 28vw, 500px);
   font-weight: 700;
 }
 
 .brand-dot {
-  font-size: clamp(120px, 10vw, 220px);
+  font-size: clamp(110px, 10vw, 180px);
   font-weight: 700;
-  transform: translateY(-40px);
+  transform: translateY(-18px);
 }
 
 @media (max-width: 1100px) {
