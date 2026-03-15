@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88aa8c10-eec3-4b98-be6f-a33136ae1915" name="Changes" comment="Updated Fonts">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+    <list default="true" id="88aa8c10-eec3-4b98-be6f-a33136ae1915" name="Changes" comment="Increase footer height for large display spacing">
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773552002734</updated>
-      <workItem from="1773552003761" duration="3055000" />
+      <workItem from="1773552003761" duration="3445000" />
     </task>
     <task id="LOCAL-00001" summary="HTML and CSS code for portfolio-site">
       <option name="closed" value="true" />
@@ -135,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773554723640</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Increase footer height for large display spacing">
+      <option name="closed" value="true" />
+      <created>1773555483626</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773555483626</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +153,7 @@
     <MESSAGE value="Refine footer brand positioning and scale" />
     <MESSAGE value="Increase footer brand scale to match original design" />
     <MESSAGE value="Updated Fonts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Fonts" />
+    <MESSAGE value="Increase footer height for large display spacing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Increase footer height for large display spacing" />
   </component>
 </project>
