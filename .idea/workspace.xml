@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88aa8c10-eec3-4b98-be6f-a33136ae1915" name="Changes" comment="Increase footer height for large display spacing">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="88aa8c10-eec3-4b98-be6f-a33136ae1915" name="Changes" comment="Reset scroll position on refresh and allow reveal animations to retrigger" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773552002734</updated>
-      <workItem from="1773552003761" duration="3445000" />
+      <workItem from="1773552003761" duration="4041000" />
     </task>
     <task id="LOCAL-00001" summary="HTML and CSS code for portfolio-site">
       <option name="closed" value="true" />
@@ -141,7 +139,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773555483626</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Apply scroll reveal animation to footer elements">
+      <option name="closed" value="true" />
+      <created>1773555884882</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1773555884882</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Reset scroll position on refresh and allow reveal animations to retrigger">
+      <option name="closed" value="true" />
+      <created>1773556448854</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1773556448854</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +168,8 @@
     <MESSAGE value="Increase footer brand scale to match original design" />
     <MESSAGE value="Updated Fonts" />
     <MESSAGE value="Increase footer height for large display spacing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Increase footer height for large display spacing" />
+    <MESSAGE value="Apply scroll reveal animation to footer elements" />
+    <MESSAGE value="Reset scroll position on refresh and allow reveal animations to retrigger" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reset scroll position on refresh and allow reveal animations to retrigger" />
   </component>
 </project>
